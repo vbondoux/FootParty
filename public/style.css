@@ -1,28 +1,35 @@
 body {
-  font-family: Arial, sans-serif;
-  background: #111;
-  color: #eee;
   margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: url("/static/fond.png") no-repeat center center fixed;
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
 
+/* Chat container avec fond semi-transparent */
 #chat-container {
   width: 90%;
   max-width: 600px;
-  background: #222;
+  background-color: rgba(0, 0, 0, 0.75); /* effet "verre fumé" */
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px #000;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+  color: white;
+  display: flex;
+  flex-direction: column;
 }
 
+/* Zone d'affichage du chat */
 #chat-box {
-  height: 400px;
+  flex: 1;
   overflow-y: auto;
-  background: #000;
+  max-height: 400px;
   padding: 10px;
+  background-color: #111;
   border-radius: 5px;
   margin-bottom: 10px;
 }
@@ -41,6 +48,7 @@ body {
   color: #00bfff;
 }
 
+/* Formulaire */
 #chat-form {
   display: flex;
   gap: 10px;
@@ -50,4 +58,20 @@ body {
   flex: 1;
   padding: 10px;
   font-size: 16px;
+  border-radius: 5px;
+  border: none;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #1db954;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1aa34a;
 }
