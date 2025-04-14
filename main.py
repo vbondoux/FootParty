@@ -26,20 +26,20 @@ def serve_index():
 async def chat(request: Request):
     data = await request.json()
     user_input = data.get("message", "")
+    thread_id = data.get("thread_id")  # <== récupère le thread si présent
 
     if not user_input:
         return {"error": "Message manquant"}
 
-    # Création d’un nouveau thread
-    thread_id = create_thread()
+    # Si pas de thread, on en crée un nouveau
+    if not thread_id:
+        thread_id = create_thread()
 
-    # Envoi du message utilisateur
     run_id = send_message(thread_id, user_input)
-
-    # Attente que le run soit terminé
     wait_for_run_completion(thread_id, run_id)
-
-    # Récupération de la réponse générée
     response = get_response(thread_id)
 
-    return {"response": response}
+    return {
+        "response": response,
+        "thread_id": thread_id  # <== retourne le thread_id pour que le frontend le garde
+    }
