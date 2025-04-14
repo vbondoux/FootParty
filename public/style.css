@@ -1,3 +1,12 @@
+
+#titre {
+  color: red;
+  font-weight: bold;
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
 body {
   margin: 0;
   padding: 0;
