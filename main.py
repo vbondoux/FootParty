@@ -4,6 +4,10 @@ from openai_client import create_thread, send_message, wait_for_run_completion, 
 
 app = FastAPI()
 
+# Servir les fichiers statiques (JS, CSS)
+app.mount("/static", StaticFiles(directory="public"), name="static")
+
+
 # Autorise les requêtes cross-origin (ex : frontend React sur un autre domaine)
 app.add_middleware(
     CORSMiddleware,
