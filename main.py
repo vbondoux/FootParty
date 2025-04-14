@@ -14,8 +14,8 @@ app.add_middleware(
 )
 
 @app.get("/")
-def root():
-    return {"message": "FootGPT backend is running 🟢"}
+def serve_index():
+    return FileResponse("public/index.html")
 
 @app.post("/chat")
 async def chat(request: Request):
