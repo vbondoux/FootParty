@@ -1,15 +1,13 @@
 #titre {
-  position: absolute;
-  top: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 3em;
+  position: relative;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 2.5em;
   font-weight: bold;
   color: red;
   text-transform: uppercase;
-  text-shadow: 2px 2px 4px #000;
   animation: flash 1s infinite alternate;
-  z-index: 2;
+  z-index: 10;
 }
 
 /* Animation "flash" */
@@ -30,9 +28,10 @@ body {
   background: url("/static/fond.png") no-repeat center center fixed;
   background-size: cover;
   display: flex;
-  justify-content: center;
+  flex-direction: column;  /* pour empiler titre et chat */
   align-items: center;
   height: 100vh;
+  padding-top: 60px;  /* ⬅️ espace pour ne pas coller le haut */
 }
 
 /* Chat container avec fond semi-transparent */
