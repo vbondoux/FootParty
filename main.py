@@ -1,5 +1,6 @@
 from fastapi import FastAPI, Request
-from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 from openai_client import create_thread, send_message, wait_for_run_completion, get_response
 
 app = FastAPI()
