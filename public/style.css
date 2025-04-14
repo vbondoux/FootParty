@@ -1,11 +1,27 @@
-
 #titre {
-  color: red;
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3em;
   font-weight: bold;
-  font-size: 2em;
-  text-align: center;
-  margin-bottom: 20px;
+  color: red;
   text-transform: uppercase;
+  text-shadow: 2px 2px 4px #000;
+  animation: flash 1s infinite alternate;
+  z-index: 2;
+}
+
+/* Animation "flash" */
+@keyframes flash {
+  from {
+    opacity: 1;
+    text-shadow: 2px 2px 4px #000;
+  }
+  to {
+    opacity: 0.6;
+    text-shadow: 0 0 15px red;
+  }
 }
 body {
   margin: 0;
